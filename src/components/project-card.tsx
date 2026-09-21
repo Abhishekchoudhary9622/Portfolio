@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { ArrowUpRight, Github, ExternalLink, Check, Sparkles, Layers } from "lucide-react";
 import { ProjectDetail } from "@/data/projects";
 
@@ -10,11 +11,25 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const router = useRouter();
+
+  const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    // Prevent container click when clicking links or buttons
+    if (target.closest("a") || target.closest("button")) {
+      return;
+    }
+    router.push(`/projects/${project.slug}`);
+  };
+
   return (
-    <div className="relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-background-subtle border border-border/80 hover:border-accent hover:shadow-glow transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between group overflow-hidden">
+    <div
+      onClick={handleCardClick}
+      className="relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-background-subtle border border-border/80 hover:border-accent hover:shadow-glow transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between group overflow-hidden cursor-pointer"
+    >
       
       {/* Top Hairline Glowing Gradient on Hover */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
       <div>
         {/* Header Badges & Links */}
@@ -30,14 +45,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
             )}
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 relative z-10">
             {project.githubUrl && (
               <a
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
                 className="p-2 rounded-xl text-foreground-muted hover:text-foreground hover:bg-background-elevated border border-border/70 transition-colors"
                 aria-label={`${project.title} GitHub Repository`}
+                title="View GitHub Repository"
               >
                 <Github className="w-4 h-4" />
               </a>
@@ -47,6 +64,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
                 className="p-2 rounded-xl text-foreground-muted hover:text-accent hover:bg-background-elevated border border-border/70 transition-colors"
                 aria-label={`${project.title} ${project.slug === "vitty-llm" ? "Model on Ollama" : "Live Application"}`}
                 title={project.slug === "vitty-llm" ? "View Model on Ollama" : "Open Live Application"}

@@ -2,21 +2,24 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, FileText, Github, Linkedin, ArrowUpRight, Terminal } from "lucide-react";
 import { profileData } from "@/data/profile";
 import { socialLinks } from "@/data/socials";
 
 const NAV_ITEMS = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "How I Build", href: "#how-i-build" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Certifications", href: "#certifications" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", id: "about" },
+  { label: "Skills", id: "skills" },
+  { label: "How I Build", id: "how-i-build" },
+  { label: "Experience", id: "experience" },
+  { label: "Projects", id: "projects" },
+  { label: "Certifications", id: "certifications" },
+  { label: "Contact", id: "contact" },
 ];
 
 export function Navbar() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -25,7 +28,9 @@ export function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      const sections = NAV_ITEMS.map((item) => item.href.substring(1));
+      if (!isHome) return;
+
+      const sections = NAV_ITEMS.map((item) => item.id);
       const scrollPosition = window.scrollY + 120;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -44,7 +49,20 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHome]);
+
+  // Handle hash scrolling when navigating across pages
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash) {
+      const id = window.location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 150);
+      }
+    }
+  }, [pathname]);
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
@@ -78,11 +96,11 @@ export function Navbar() {
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-1 bg-background-subtle/70 px-3 py-1.5 rounded-full border border-border/80 backdrop-blur-sm">
           {NAV_ITEMS.map((item) => {
-            const isActive = activeSection === item.href.substring(1);
+            const isActive = isHome && activeSection === item.id;
             return (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                href={`/#${item.id}`}
                 className={`px-3 py-1 text-xs font-medium rounded-full transition-all duration-200 ${
                   isActive
                     ? "bg-foreground/10 text-accent font-semibold shadow-sm"
@@ -90,7 +108,7 @@ export function Navbar() {
                 }`}
               >
                 {item.label}
-              </a>
+              </Link>
             );
           })}
         </nav>
@@ -154,15 +172,15 @@ export function Navbar() {
         <div className="md:hidden bg-background-elevated/95 border-b border-border backdrop-blur-xl px-6 py-5 mt-3 space-y-4 animate-in fade-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col space-y-2">
             {NAV_ITEMS.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                href={`/#${item.id}`}
                 onClick={closeMobileMenu}
                 className="px-3 py-2 text-sm text-foreground-muted hover:text-foreground hover:bg-background-hover rounded-lg transition-colors flex items-center justify-between"
               >
                 <span>{item.label}</span>
                 <ArrowUpRight className="w-3.5 h-3.5 opacity-50" />
-              </a>
+              </Link>
             ))}
           </nav>
           <div className="pt-4 border-t border-border flex items-center justify-around">
