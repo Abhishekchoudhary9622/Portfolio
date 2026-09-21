@@ -48,7 +48,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-xl text-foreground-muted hover:text-accent hover:bg-background-elevated border border-border/70 transition-colors"
-                aria-label={`${project.title} Live Application`}
+                aria-label={`${project.title} ${project.slug === "vitty-llm" ? "Model on Ollama" : "Live Application"}`}
+                title={project.slug === "vitty-llm" ? "View Model on Ollama" : "Open Live Application"}
               >
                 <ExternalLink className="w-4 h-4" />
               </a>

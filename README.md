@@ -131,8 +131,8 @@ npm run start
 
 - **[ParcelPilot AI](https://github.com/Abhishekchoudhary9622/pilotparcel)** — Evidence-first Support & Operations Copilot combining deterministic policy engines (FastAPI/Python) with LangGraph orchestration and hybrid document retrieval (BM25 + FastEmbed ONNX RRF).
 - **[HealthSync](https://github.com/Abhishekchoudhary9622/Healthcare)** — Healthcare Appointment & Follow-up Manager featuring multi-portal access (Patient/Doctor/Admin), Google Calendar synchronization, and automated cron background alert jobs.
-- **Vitty LLM** — End-to-end dataset curation, LoRA fine-tuning, and GGUF quantization pipeline for low-memory edge inference via Ollama.
-- **Eventallify** — Collaborative university event discovery and management platform with cryptographic QR ticketing and Groq AI concierge.
+- **[Vitty LLM](https://ollama.com/vrishankraina/vittyquantized)** — End-to-end dataset curation, LoRA fine-tuning, and GGUF quantization pipeline for low-memory edge inference via Ollama.
+- **[Eventallify](https://github.com/Abhishekchoudhary9622/Eventallify)** ([Live Demo](https://eventallify-neon.vercel.app/)) — Collaborative university event discovery and management platform with cryptographic QR ticketing and Groq AI concierge.
 
 ---
 

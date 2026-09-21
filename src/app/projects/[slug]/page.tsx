@@ -101,7 +101,11 @@ export default function ProjectDetailPage({ params }: Props) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-foreground text-background hover:bg-accent hover:text-background text-xs font-bold transition-all"
               >
-                <span>Open Live Application</span>
+                <span>
+                  {project.slug === "vitty-llm"
+                    ? "View Model on Ollama"
+                    : "Open Live Application"}
+                </span>
                 <ExternalLink className="w-4 h-4" />
               </a>
             )}

@@ -283,8 +283,8 @@ export const projectsData: ProjectDetail[] = [
     tagline: "End-to-end dataset preparation, instruction tuning, GGUF quantization, and low-latency edge deployment for open-weights models.",
     principle: "Optimizing open-weights models for resource-constrained hardware without external API reliance.",
     githubUrl: null,
-    liveUrl: null,
-    statusText: "Pipeline & Implementation",
+    liveUrl: "https://ollama.com/vrishankraina/vittyquantized",
+    statusText: "Quantized Model · Ollama",
     tags: [
       "Llama",
       "Python",
@@ -367,9 +367,9 @@ export const projectsData: ProjectDetail[] = [
     collaborative: true,
     tagline: "Collaborative campus event hub with dynamic QR ticketing, organizer management tools, and Groq-powered AI assistance.",
     principle: "Unified campus engagement with instant ticket validation and modular UI components.",
-    githubUrl: null,
-    liveUrl: null,
-    statusText: "Collaborative Project · Campus Hub",
+    githubUrl: "https://github.com/Abhishekchoudhary9622/Eventallify",
+    liveUrl: "https://eventallify-neon.vercel.app/",
+    statusText: "Live App · Collaborative",
     tags: [
       "Next.js",
       "TypeScript",
