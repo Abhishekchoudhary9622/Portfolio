@@ -116,7 +116,7 @@ export function Navbar() {
         {/* Action Buttons (Right) */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://github.com/Abhishekchoudhary9622"
+            href={profileData.github}
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded-lg text-foreground-muted hover:text-foreground hover:bg-background-elevated border border-border/60 transition-colors"
@@ -125,7 +125,7 @@ export function Navbar() {
             <Github className="w-4 h-4" />
           </a>
           <a
-            href="https://www.linkedin.com/in/abhishek-choudhary-b73a28261"
+            href={profileData.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 rounded-lg text-foreground-muted hover:text-foreground hover:bg-background-elevated border border-border/60 transition-colors"
@@ -185,7 +185,7 @@ export function Navbar() {
           </nav>
           <div className="pt-4 border-t border-border flex items-center justify-around">
             <a
-              href="https://github.com/Abhishekchoudhary9622"
+              href={profileData.github}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-xs text-foreground-muted hover:text-accent py-2"
@@ -194,7 +194,7 @@ export function Navbar() {
               <span>GitHub</span>
             </a>
             <a
-              href="https://www.linkedin.com/in/abhishek-choudhary-b73a28261"
+              href={profileData.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-xs text-foreground-muted hover:text-accent py-2"
@@ -205,6 +205,7 @@ export function Navbar() {
           </div>
         </div>
       )}
+
     </header>
   );
 }

@@ -13,18 +13,17 @@ export const experiences: Experience[] = [
   {
     role: "Software Developer Intern",
     company: "Yarsi Corporation",
-    location: "Noida, Uttar Pradesh, India",
+    location: "Noida, India",
     period: "May 2025 – July 2025",
     type: "Internship",
     description:
-      "Contributed to frontend application engineering and cross-platform UI development while gaining direct exposure to production engineering workflows.",
+      "Contributed to frontend web application development and responsive UI engineering while gaining practical exposure to production workflows and LLM concepts.",
     highlights: [
-      "Developed the company's website using React Native with clean UI structures and responsive screen layouts.",
-      "Collaborated in a Git-based version-controlled workflow, executing debugging, feature branching, and code reviews.",
-      "Gained practical exposure to LLM-based AI chatbot integration patterns and prompt orchestration concepts.",
-      "Translated high-fidelity Figma mockups into interactive, accessible, and performant screen components.",
-      "Focused on cross-device consistency and layout stabilization across multiple device viewports.",
+      "Developed the company's website using React, prioritizing a clean UI and mobile-friendly, responsive layouts.",
+      "Gained hands-on experience with industry workflows: debugging, Git-based collaboration, and foundational concepts of LLM-based AI chatbots.",
+      "Translated design mockups into interactive screens and ensured consistent performance across multiple devices.",
     ],
-    technologies: ["React Native", "JavaScript", "Git", "GitHub", "UI/UX Translation", "LLM Concepts"],
+    technologies: ["React", "JavaScript", "HTML/CSS", "Git", "GitHub", "Responsive Design", "LLM Concepts"],
   },
 ];
+

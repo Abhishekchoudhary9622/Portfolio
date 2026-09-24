@@ -14,14 +14,15 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/abhishek-choudhary-b73a28261",
-    label: "linkedin.com/in/abhishek-choudhary",
+    url: "https://www.linkedin.com/in/abhishek-choudhary2005",
+    label: "linkedin.com/in/abhishek-choudhary2005",
     icon: "linkedin",
   },
   {
     name: "Email",
-    url: "mailto:Choudharyabhishek656@gmail.com",
-    label: "Choudharyabhishek656@gmail.com",
+    url: "mailto:choudharyabhishek656@gmail.com",
+    label: "choudharyabhishek656@gmail.com",
     icon: "mail",
   },
 ];
+

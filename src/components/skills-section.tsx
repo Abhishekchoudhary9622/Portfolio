@@ -3,15 +3,17 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { skillCategories } from "@/data/skills";
-import { Code, Layers, Cpu, BookOpen, Cloud, CheckCircle2 } from "lucide-react";
+import { Code, Layers, Cpu, BookOpen, Cloud, BarChart3, Users, CheckCircle2 } from "lucide-react";
 
 const CATEGORY_ICONS: Record<string, React.ComponentType<{ className?: string }>> = {
   programming: Code,
-  fullstack: Layers,
+  cloud: Cloud,
   aiml: Cpu,
+  "data-analytics": BarChart3,
   "cs-fundamentals": BookOpen,
-  "cloud-tools": Cloud,
+  other: Users,
 };
+
 
 export function SkillsSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>("all");

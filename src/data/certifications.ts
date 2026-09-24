@@ -9,6 +9,7 @@ export interface Certification {
   highlight?: boolean;
   skillsCovered: string[];
   credentialId?: string;
+  credentialUrl?: string;
 }
 
 export const certifications: Certification[] = [
@@ -22,39 +23,39 @@ export const certifications: Certification[] = [
     verified: true,
     highlight: true,
     skillsCovered: ["OCI Architecture", "IAM & Security", "VCN Networking", "Autonomous DB", "Storage Tiers"],
-    credentialId: "OCI-2025-FOUNDATIONS-ASSOC",
+    credentialId: "102993796OCI25FNDCFA",
   },
   {
     id: "aws-cloud-architecting",
     title: "AWS Academy Graduate — Cloud Architecting",
     issuer: "Amazon Web Services (AWS)",
     category: "cloud",
-    status: "Completed & Verified",
+    status: "Completed & Verified (Credly)",
     verified: true,
     highlight: true,
     skillsCovered: ["VPC Peering", "EC2 & Auto Scaling", "S3 & DynamoDB", "IAM Policies", "Serverless Lambda"],
-    credentialId: "AWS-ACADEMY-ARCHITECTING",
+    credentialId: "Credly Verified Badge",
   },
   {
     id: "aws-cloud-foundations",
     title: "AWS Academy Graduate — Cloud Foundations",
     issuer: "Amazon Web Services (AWS)",
     category: "cloud",
-    status: "Completed & Verified",
+    status: "Completed & Verified (Credly)",
     verified: true,
     skillsCovered: ["Cloud Economics", "Global Infrastructure", "Security & Compliance", "Core Services"],
-    credentialId: "AWS-ACADEMY-FOUNDATIONS",
+    credentialId: "Credly Verified Badge",
   },
   {
     id: "java-foundations-associate",
-    title: "Java Certified Foundations Associate",
+    title: "Oracle: Java Certified Foundations Associate",
     issuer: "Oracle",
     category: "programming",
     status: "Certified Associate",
     verified: true,
     highlight: true,
     skillsCovered: ["Core Java", "OOP Design Patterns", "Inheritance & Polymorphism", "Exception Handling", "Collections"],
-    credentialId: "ORACLE-JAVA-FOUNDATIONS",
+    credentialId: "Oracle Certified",
   },
   {
     id: "mysql-heatwave",
@@ -64,7 +65,7 @@ export const certifications: Certification[] = [
     status: "Certified Associate",
     verified: true,
     skillsCovered: ["In-Memory Acceleration", "OLAP & OLTP Workloads", "Cluster Scaling", "SQL Query Tuning"],
-    credentialId: "MYSQL-HEATWAVE-REL1",
+    credentialId: "Oracle Certified",
   },
   {
     id: "leetcode-sql-50",
@@ -74,26 +75,27 @@ export const certifications: Certification[] = [
     status: "Completed",
     verified: true,
     skillsCovered: ["Advanced Joins", "Window Functions", "Aggregate Grouping", "Subqueries", "Index Optimization"],
-    credentialId: "LEETCODE-SQL-50-VERIFIED",
+    credentialId: "Completed",
   },
   {
     id: "nptel-graph-theory",
-    title: "Algorithmic Graph Theory and Data Structures",
+    title: "NPTEL: Algorithmic Graph Theory and Data Structures",
     issuer: "NPTEL (IIT/IISc)",
     category: "algorithms",
     status: "Completed",
     verified: true,
     skillsCovered: ["Graph Algorithms (BFS/DFS)", "Shortest Paths (Dijkstra)", "Spanning Trees", "Complexity Theory"],
-    credentialId: "NPTEL-GRAPH-ALGO-VERIFIED",
+    credentialId: "Completed",
   },
   {
     id: "udemy-java-master",
     title: "Learn Java Programming: Beginner to Master",
     issuer: "Udemy",
     category: "programming",
-    status: "Completed",
+    status: "Completed (Certificate)",
     verified: true,
     skillsCovered: ["Concurrency & Threads", "JVM Memory Model", "Generics", "Streams & Lambdas", "File I/O"],
-    credentialId: "UDEMY-JAVA-MASTERCLASS",
+    credentialId: "Udemy Certificate",
   },
 ];
+
